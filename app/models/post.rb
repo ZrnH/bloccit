@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   after_create :create_vote
 
   has_many :votes, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   default_scope {order('rank DESC')}
 
